@@ -6,8 +6,8 @@ import java.sql.SQLException;
 
 public class DbConnection {
     private static final String url="jdbc:mysql://localhost:3306/jdbcdemo";
-    private static final String userName="root";
-    private static final String passWord="SQLforpragath";
+    private static final String userName=System.getenv("DB_USERNAME");
+    private static final String passWord=System.getenv("DB_PASSWORD");
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(url,userName,passWord);
     }
